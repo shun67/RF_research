@@ -16,14 +16,14 @@ print("loading start")
 test_X=pd.read_table(sys.argv[1],index_col=0,header=None)
 test_y=pd.read_table(sys.argv[2],index_col=0,header=None)
 #test data
-clf= pickle.load(open('/home/sitoh/window/w15/RF_model_15.sav', 'rb'))
+clf= pickle.load(open('****/****/RF_model_15.sav', 'rb'))
 print("predict start")
 pred_time_s=time.time()
 pred=clf.predict(test_X)
 pred_time=time.time()-pred_time_s
 
 
-f_1=open('/home/sitoh/window/result/'+sys.argv[3]+'.result','wt')
+f_1=open('********/'+sys.argv[3]+'.result','wt')
 f_1.write("predict time :"+str(pred_time)+"[sec]"+"\n")
 f_1.write('Accuracy     :'+str(accuracy_score(test_y,pred))+"\n")
 f_1.write('Precision    :'+str(precision_score(test_y,pred))+"\n")
@@ -37,7 +37,7 @@ for j in fti:
 
 
 
-path='/home/sitoh/window/prob/'+sys.argv[3]+'.pro'
+path='*********'+sys.argv[3]+'.pro'
 f = open(path,mode='wt')
 
 f.write("data_no        0       1\n")
